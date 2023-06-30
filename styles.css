@@ -102,3 +102,16 @@ section {
     font-weight: 700;
 }
 
+@media screen and (max-width: 990px){
+    
+    .logo {
+        display: none;
+    }
+
+    main {
+        width: 90%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+}
