@@ -26,7 +26,8 @@ main {
 }
 
 h3 {
-    display: flex;    /* Serve para deixar os itens ao centro de uma caixa */
+    display: flex;
+    /* Serve para deixar os itens ao centro de uma caixa */
     flex-direction: column;
     align-items: center;
 }
@@ -79,7 +80,8 @@ section {
     border: 1px solid #772FD3;
     margin-top: 36px;
     padding: 12px;
-    display: flex;    /* Serve para deixar os itens ao centro de uma caixa */
+    display: flex;
+    /* Serve para deixar os itens ao centro de uma caixa */
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.15);
@@ -102,14 +104,15 @@ section {
 
 }
 
-.currency-value, .currency-value-to-convert {
+.currency-value,
+.currency-value-to-convert {
     color: #555;
     font-size: 20px;
     font-weight: 700;
 }
 
-@media screen and (max-width: 990px){
-    
+@media screen and (max-width: 990px) {
+
     .logo {
         display: none;
     }
@@ -117,7 +120,6 @@ section {
     main {
         width: 90%;
         padding: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
+        margin-top: 40px;
+    }
 }
