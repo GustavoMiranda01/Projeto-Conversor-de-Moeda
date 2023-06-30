@@ -111,5 +111,6 @@ section {
     main {
         width: 90%;
         padding: 10px;
+        margin-top: 20px;
       }
 }
