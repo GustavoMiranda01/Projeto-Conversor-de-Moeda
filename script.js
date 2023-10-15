@@ -2,23 +2,23 @@ const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select")
 
 
-function convertValues() {
+async function convertValues() {
     const inputCurrencyValue = document.querySelector(".input-currency").value
     const currencyValueToConvert = document.querySelector(".currency-value-to-convert") // Valor em Real
     const currencyValueConverted = document.querySelector(".currency-value") // Outras Moedas 
 
+    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
 
-    const dolarToday = 4.79
-    const euroToday = 5.23
-    const libraToday = 6.09
-    const bitcoinToday = 145810.98
+    const dolar = data.USDBRL.high
+    const euro = data.EURBRL.high
+    const bitcoin = data.BTCBRL.high
 
 
     if (currencySelect.value == "dolar") { // Se o select estiver elecionado o valor de dolar, entre aqui
         currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD"
-        }).format(inputCurrencyValue / dolarToday)
+        }).format(inputCurrencyValue / dolar)
 
     }
 
@@ -26,21 +26,14 @@ function convertValues() {
         currencyValueConverted.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR"
-        }).format(inputCurrencyValue / euroToday)
-    }
-
-    if (currencySelect.value == "libra") { // Se o select estiver elecionado o valor de libra, entre aqui
-        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
-            style: "currency",
-            currency: "GBP"
-        }).format(inputCurrencyValue / libraToday)
+        }).format(inputCurrencyValue / euro)
     }
 
     if (currencySelect.value == "bitcoin") { // Se o select estiver elecionado o valor de Bitcoin, entre aqui
         currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "BTC"
-        }).format(inputCurrencyValue / bitcoinToday)
+        }).format(inputCurrencyValue / bitcoin)
     }
 
 
@@ -66,11 +59,6 @@ function changeCurrency() {
     if (currencySelect.value == "euro") {
         currencyName.innerHTML = "Euro"
         currencyImg.src = "./assets/Euro.png"
-    }
-
-    if (currencySelect.value == "libra") {
-        currencyName.innerHTML = "Libra esterlina"
-        currencyImg.src = "./assets/Libra.png"
     }
 
     if (currencySelect.value == "bitcoin") {
