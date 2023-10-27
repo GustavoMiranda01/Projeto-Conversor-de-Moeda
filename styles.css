@@ -7,8 +7,7 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
+    height: 100vw;
     background-image: url("https://investidorsardinha.r7.com/wp-content/uploads/2020/10/bolsa-de-valores-o-que-e-como-funciona-mitos-e-custos-para-investir-1024x576.jpg.webp");
     background-size: cover;
 
